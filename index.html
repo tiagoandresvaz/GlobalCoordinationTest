@@ -2,28 +2,33 @@
 <html>
 <head>
   <title>Global Coordination Test</title>
+  <script src="main.js"></script>
   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <script src='main.js'></script>
 </head>
-<body>
+<body onload="counterFunc(5368)">
+  <div id="overlay"></div>
       <article>
           <strong>Global Coordination Test</strong>
-          <p>
+          <p class="logo">
+            <a href="https://covid19.spaceappschallenge.org/challenges/covid-challenges/light-path/teams/global-coordination-test/project" target="_blank"><img src="logo.png"/></a>
+          </p>
+          <p class="description">
             The idea it is to build an app that coordinates tests of “isolation”, where different regions turn off the lights and 
 create controlled blackouts demonstrating coordination, who does not turn off the light (it is because they are 
 not informed, without coordination) high probability of not complying with social rules.
           </p>
           <p class="lights">WOULD YOU TURN OFF YOUR LIGHT?</p>
+          <p class="lights-people">People that turned off their light</p>
+          <span id="counter"></span>
         </article>
-        <div class="switch-box">
+        <div class="switch-box" id="switch-box">
           <div class="onoffswitch">
             <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
             <label class="onoffswitch-label" for="myonoffswitch">
-              <span class="onoffswitch-inner" id="switch" onclick={counterFunc(5368)}></span>
+              <span class="onoffswitch-inner" id="switch" onclick="counterFunc(5369)"></span>
               <span class="onoffswitch-switch"></span>
             </label>
           </div>
         </div>
-  </div>
 </body>
 </html>
