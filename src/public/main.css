@@ -4,7 +4,7 @@ body {
   margin: 20px auto 0;
   padding: 0 20px 0 20px;
   background: 
-  url('nasa.jpg') no-repeat;
+  url('./assets/nasa.jpg') no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
