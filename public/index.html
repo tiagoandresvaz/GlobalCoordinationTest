@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalCoordenationTest</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+
+    <div id="overlay"></div>
+    <article>
+        <strong>Global Coordination Test</strong>
+        <p class="logo">
+            <a href="https://covid19.spaceappschallenge.org/challenges/covid-challenges/light-path/teams/global-coordination-test/project" target="_blank"><img src="./assets/logo.png" /></a>
+        </p>
+        <p class="description">
+            The idea is to build an app that coordinates tests of “isolation”, where different regions turn off their lights and create controlled blackouts demonstrating coordination, who does not turn off the light (it is because they are not informed, without
+            coordination) high probability of not complying with social rules.
+        </p>
+        <p class="lights">WOULD YOU TURN OFF YOUR LIGHT?</p>
+        <p class="lights-people">People that turned off their light</p>
+        <span id="counter"></span>
+    </article>
+    <div class="messages"></div>
+
+    <div class="switch-box" id="switch-box">
+        <button class="eventBtn" id="eventBtn" onclick="plusOne()">TurnOff</button>
+
+    </div>
+
+
+    <script type="text/javascript">
+        let socket = io('http://localhost:3000');
+
+        function renderOne(num) {
+            console.log(num)
+
+            //if (num > (num - 1)) {
+            $('.messages').append('<div class="message">' + num + '</div>');
+
+            //}
+        }
+
+        function refreshPage(x) {
+            location.reload(x);
+        }
+
+        socket.on('reload', function(x) {
+            refreshPage(x);
+        })
+
+
+        socket.on('previousNumber', function(num) {
+            //for (let i = 0; i < num.length; i++) {
+            renderOne(num);
+            //}
+
+        })
+
+        socket.on('numberOfLigths', function(number) {
+
+            renderOne(parseInt(number));
+        })
+
+
+        let x = 0;
+
+        function plusOne() {
+
+            renderOne(x);
+            socket.emit('plusLigth', x);
+            refreshPage(true);
+            socket.emit('refresh', x);
+
+        }
+
+
+
+        //function plusOne(num) {
+        //num.preventDefault()
+        //console.log(num)
+        //if (num != -1) {
+        //renderOne(num); //Se eu tiro esse primeiro render, aparece só pro outro
+        //socket.emit('plusLigth', num);
+
+        //}
+
+        //}
+    </script>
+
+
+</body>
+
+</html>

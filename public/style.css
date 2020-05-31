@@ -1,0 +1,125 @@
+html,
+body {
+    height: 100%;
+    background: url('./assets/nasa.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    width: 600px;
+    height: 50px;
+    font-size: 14px;
+    background: #069;
+    text-align: center;
+    font-weight: bold;
+    color: #FFF;
+    margin-top: 60px;
+    margin: 20px 1000px 20px 380px;
+}
+
+
+/* superior | direita | inferior | esquerda */
+
+.messages {
+    width: 200px;
+    height: 60px;
+    margin: 20px 1000px 20px 580px;
+    padding: 20px;
+    text-align: center;
+    background-color: #ddd;
+}
+
+#overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+article {
+    padding: 50px;
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+article strong {
+    color: #ddd;
+    font-size: 70px;
+    font-family: sans-serif;
+}
+
+article p.logo {
+    position: absolute;
+    top: -1px;
+    right: 20px;
+}
+
+article p.logo img {
+    margin-top: 500px;
+    max-width: 50%;
+    max-height: auto;
+}
+
+article p.description {
+    padding-top: 70px;
+    color: #ddd;
+    font-size: 15px;
+    font-family: sans-serif;
+    text-align: inherit;
+}
+
+article p.lights {
+    padding-top: 70px;
+    color: #ddd;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+article p.lights-people {
+    color: #ddd;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+article span {
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #feaf32;
+}
+
+.switch-box {
+    background-color: rgb(230, 230, 230, 0.8);
+    display: contents;
+    height: 150px;
+    width: 50px;
+    border-radius: 20px;
+    margin: inherit;
+}
+
+button {
+    padding: 10px 5px 10px 5px;
+}
