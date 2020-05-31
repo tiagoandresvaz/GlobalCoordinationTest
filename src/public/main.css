@@ -9,6 +9,21 @@ body {
   background-attachment: fixed;
 }
 
+#earth {
+  margin: 10px auto;
+  width: 300px;
+  height: 300px;
+  background-image: url(./assets/earth.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px #000;
+  animation: spin 20s linear alternate infinite;
+}
+
+@keyframes spin {
+  100%{background-position: 100%;}
+}
+
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
@@ -18,7 +33,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  background-color: rgba(0,0,0,0.4); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
@@ -37,19 +52,11 @@ article strong {
   text-shadow: 2px 2px 4px #999999;
 }
 
-
-article p.logo {
-  position: absolute;
-  top: -16px;
-  right: 20px;
+article img {
+  position: fixed;
+  right: 100px;
+  
 }
-
-article p.logo img {
-  margin-top: 20px;
-  max-width: 70%;
-  max-height: auto;
-}
-
 
 article p.description {
   padding-top: 70px;
@@ -78,16 +85,6 @@ article span {
   font-family: sans-serif;
   font-size: 30px;
   color: #feaf32;
-}
-
-
-.switch-box {
-  background-color: rgb(230, 230, 230, 0.8);
-  display: flex;
-  height: 150px;
-  width: 100px;
-  border-radius: 20px;
-  margin: inherit;
 }
 
 .onoffswitch {
